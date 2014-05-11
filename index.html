@@ -15,7 +15,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 	<link rel="stylesheet" href="css/reveal.min.css">
-	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+	<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+	<!-- custom styles for this slide deck -->
+	<link rel="stylesheet" href="css/custom.css">
 
 	<!-- For syntax highlighting -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -48,47 +50,178 @@
 	<div>Building a JavaScript Style Guide</div>
 </section>
 <section data-id="f9cf3e24a312e67f7f9035c112928f7f" class="">
-	<h2>Who I Am</h2>
+	<h2>Liz Lee</h2>
 
-	<div style="text-align: left; " class="fragment" data-fragment-index="0">
-		<div style="text-align: center;">
-			<span>Liz Lee</span>
-		</div>
-		<div style="text-align: center;">
-			<span>@lizlux</span>
-		</div>
-<span>
-    <div style="text-align: center;">
+	<div style="text-align: center;">
+		<span>@lizlux</span>
+	</div>
+	<div style="text-align: center;">
 		<span>Front End Engineer @Wikia</span>
 	</div>
-<div style="text-align: center;">
-	<span>Front End Coding Conventions Team</span>
-</div>
-</span>
+	<div style="text-align: center;">
+		<span>Front End Coding Conventions Team</span>
 	</div>
 </section>
 <section data-id="93a99ed0945ea276907e39a164d0c8d7" class="">
 	<h2>My Goal</h2>
 
-	<div>
-		<br>
-	</div>
 	<div class="fragment" data-fragment-index="0">You too, can have a style guide...</div>
 	<div class="fragment" data-fragment-index="1">In less than 6 months!</div>
 </section>
 <section data-id="bbd0232ae9bb7bd45f23ef00af6d57bf" class="">
-	<h2>What we did</h2>
+	<section>
+		<div style="text-align: center">
+			<img src="images/Wikia_Logo.svg" style="width: 500px;">
+		</div>
+		<div class="fragment" data-fragment-index="0">"The social universe for fans by fans"</div>
+		<div class="fragment" data-fragment-index="1">"Create your own wiki, we'll host it!"</div>
+		<aside class="notes">
+			<ul>
+				<li>Marketing department asked me to say this</li>
+				<li>Lot's of entertainment and gaming wikis</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<div style="text-align: center">
+			<img src="images/Wikia_Logo.svg" style="width: 300px;">
+		</div>
+		<ul>
+			<li class="fragment" data-fragment-index="0">Historically full stack engineers and generalists</li>
+			<li class="fragment" data-fragment-index="1">
+				Steady growth:
+				<ul class="fragment" data-fragment-index="2">
+					<li>2010: 40 Employees</li>
+					<li>2014: 236 Employees</li>
+					<li>600% in 4 years</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="absolute-element fragment" data-fragment-index="5" style="position: absolute; top: 170px; width: 100%; text-align: right; box-sizing: border-box; padding-right: 130px;">
+			<img src="images/anarchy.png" style="width: 300px;">
+		</div>
+		<aside class="notes">
+			<ul>
+				<li>Not exactly "rapid" growth, but "steady" growth</li>
+				<li>Marketing department will love that image juxtaposition</li>
+				<li>Interesting fact: I google image searched "code base anarchy" and this image shows up in the first page of results:</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<img src="images/AnarchyOnlineWikiaLogo1.png">
+		<div>
+			<a href="http://anarchyonline.wikia.com/">http://anarchyonline.wikia.com/</a>
+		</div>
+		<aside class="notes">
+			<ul>
+				<li>Long philosophical discussions without a place to point to.</li>
+			</ul>
+		</aside>
+	</section>
+</section>
+<section>
+	<div>Squeaky wheel... </div>
+	<div class="fragment" data-fragment-index="0">... gets to lead the JavaScript Coding Conventions group!</div>
 </section>
 <section data-id="be93de882ff95a9ae4dd8b33a1217d66" class="">
 	<h2>Our Mission</h2>
-
-	<div>
-		<br>
-	</div>
-	<div>As a developer, I want a clear and well documented guide covering coding conventions, patterns and best
-		practices for JavaScript development at Wikia along with tools to help me in making my code compliant.<br>
-	</div>
+	<blockquote>
+		As a developer, I want a clear and well documented guide covering coding conventions, patterns and best practices for JavaScript development at Wikia along with tools to help me in making my code compliant.
+	</blockquote>
 </section>
+<section>
+	<h2>Key Principles</h2>
+</section>
+<section>
+	<section>
+		<h2>#1: Trust the code</h2>
+	</section>
+	<section>
+		<h2>Code Smells</h2>
+		<p>"Any symptom in the source code of a program that possibly indicates a deeper problem" <br>-Wikipedia</p>
+	</section>
+	<section>
+		<h3>Smells</h3>
+		<ul>
+			<li>Conditional complexity</li>
+			<li>Mix-matched white space</li>
+			<li>Long methods</li>
+			<li>Long parameter lists</li>
+			<li>Duplicate code</li>
+			<li>etc.</li>
+		</ul>
+	</section>
+	<section>
+		<h2>Broken Windows Effect</h2>
+		<p>Crime begets crime</p>
+		<p class="fragment" data-fragment-index="0">Smelly code begets smelly code</p>
+		<aside class="notes">
+			<ul>
+				<li>Sam Breed, CTO of Quick Left, jQuery conf 2013; "Fixing Broken Windows: 10 Small Things That Will Instantly Improve Your Project"</li>
+				<li>Coding environment</li>
+				<li>Make your code trustworthy so you can trust your code!</li>
+			</ul>
+		</aside>
+	</section>
+</section>
+<section>
+	<section>
+		<h2>#2: Don't reinvent the wheel</h2>
+	</section>
+	<section>
+		<h3>What we did wrong:</h3>
+		<p class="fragment" data-fragment-index="0">Wrote all the rules</p>
+		<p class="fragment" data-fragment-index="1">Then looked into tools</p>
+		<aside class="notes">
+			Turns out others have done this before!
+		</aside>
+	</section>
+	<section>
+		<ul style="word-break: break-word; width: 80%;">
+			<li>
+				Google: <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml</a>
+			</li>
+			<li>
+				jQuery: <a href="https://github.com/jquery/contribute.jquery.org/blob/master/pages/style-guide/js.md">https://github.com/jquery/contribute.jquery.org/blob/master/pages/style-guide/js.md</a>
+			</li>
+			<li>
+				AirBnb: <a href="https://github.com/airbnb/javascript">https://github.com/airbnb/javascript</a>
+			</li>
+		</ul>
+	</section>
+	<section>
+		<blockquote>
+As a developer, I want a clear and well documented guide covering coding conventions, patterns and best practices for JavaScript development at Wikia along with <em>tools to help me in making my code compliant.</em>
+		</blockquote>
+	</section>
+	<section>
+		<h2>Freakin' Whitespace!</h2>
+		<p class="fragment" data-fragment-index="0">Tons of legacy code means we needed automated tools, but none of the ones out there matched our conventions.</p>
+		<aside class="notes">
+			We'll talk more about this later, but it brings me to my next key principle...
+		</aside>
+	</section>
+</section>
+<section>
+	<section>
+		<h2>#3: Programmers are lazy</h2>
+		<p class="fragment" data-fragment-index="0">Good programmers are anyway!</p>
+		<aside class="notes">
+			<ul>
+				<li>
+					Good, lazy programmers are expensive and need streamlined work environments.
+				</li>
+				<li>It's critical that we provide tools to automatically check and enforce coding conventions</li>
+			</ul>
+		</aside>
+	</section>
+</section>
+
+
+
+
+
 <section data-id="d1f43c0ff1fc09e949f9539c207711f5" class="">
 	<h2>Why Have a Style Guide Anyway?</h2>
 	<br>
@@ -127,17 +260,15 @@
 
 		<div>Comma First:</div>
 		<div>
-			<pre><code><font color="#ff00cc">var</font> <font color="#4a86e8">foo</font> = <font
-				color="#ff0000">1</font>&nbsp;</code><code> , <font color="#4a86e8">bar</font> = <font
-				color="#ff0000">2</font></code><code> , <font color="#4a86e8">baz</font> = <font
-				color="#ff0000">3</font>;&nbsp;</code></pre>
+<pre><code>var foo = 1,
+    bar = 2,
+    baz = 3</code></pre>
 		</div>
 		<div>Comma Last:</div>
 		<div>
-			<pre><code><font color="#ff00cc">var</font> <font color="#4a86e8">foo</font> = <font
-				color="#ff0000">1</font>,&nbsp;</code><code> <font color="#4a86e8">bar</font> = <font
-				color="#ff0000">2</font>,&nbsp;</code><code> <font color="#4a86e8">baz</font> = <font
-				color="#ff0000">3</font>;&nbsp;</code></pre>
+<pre><code>var foo = 1,
+    bar = 2,
+    baz = 3;</code></pre>
 		</div>
 		<div>
 			<br>
@@ -152,20 +283,16 @@
 
 		<div>Spaces:</div>
 		<div>
-<pre><code>
-	<font color="#ff00cc">function</font> <font color="#ff9900">foo</font>() {
-	<font color="#ff00cc">return</font> <font color="#6aa84f">"bar"</font>;
-	}
-</code></pre>
+<pre><code>function foo() {
+    return "bar";
+}</code></pre>
 		</div>
 		<div>Tabs:</div>
 		<div>
-<pre><code>
-	<font color="#ff00cc">function</font> <font color="#ff9900">foo</font>() {
-	<font color="#666666">// indented with tabs</font>
-	<font color="#ff00cc">return</font> <font color="#6aa84f">"bar"</font>;
-	}
-</code></pre>
+<pre><code>function foo() {
+    // indented with tabs
+    return "bar";
+}</code></pre>
 		</div>
 		<div>
 			<p class="p1">90% spaces</p>
@@ -182,26 +309,22 @@
 		<p>
 			<span>One Space:</span>
 		</p>
-<pre><code><font color="#ff00cc">function</font> <font color="#ff9900">fn</font>( <font color="#4a86e8">arg1</font>,
-	<font color="#4a86e8">arg2</font> ) { ...
+<pre><code>function fn( arg1,
+    arg2 ) { ...
 
-	// or
-	<font color="#ff00cc">if</font> ( <font color="#ff00cc">true</font> ) { ...
-</code>    </pre>
+// or
+if ( true ) { ...</code></pre>
 		<p>
 			<span>No spaces:</span>
 		</p>
-<pre><code><font color="#ff00cc">function</font> <font color="#ff9900">fn</font>(<font color="#4a86e8">arg1</font>,
-	<font color="#4a86e8">arg2</font>) { ...
-	<br></code><code>// or
-	<font color="#ff00cc">if</font> (<font color="#ff00cc">true</font>) { ...
-</code></pre>
+<pre><code>function fn(arg1, arg2) { ...
+
+// or
+if (true) { ...</code></pre>
 		<p>
 			<span>94% No Spaces</span>
 			<br>
 		</p>
-
-
 	</section>
 </section>
 <section data-id="c68539aa2a3d512ab2020ab47b455edc" class="stack">
@@ -214,37 +337,31 @@
 		</div>
 		<div>Here's why not:&nbsp;</div>
 		<div>
-			<pre><code>eatPretzels ( type, function() {</code><code><span style="font-family: monospace;">    return 'Yum!';</span></code><code><span
-				style="font-family: monospace;">});</span></code>    </pre>
+<pre><code>eatPretzels( type, function() {
+    return 'Yum!';
+});</code></pre>
 		</div>
 		<div class="absolute-element"
 			 style="position: absolute; width: 189px; height: 186px; z-index: 4; left: 43px; top: 331px;">
 			<img
 				src="https://s3.amazonaws.com/media-p.slid.es/uploads/lizlee/images/332822/red-arrow-up-right-md_copy.png"
-				style="width: 148.3917579849872px; height: 148.3917579849872px; max-height: none; max-width: none;">
-			<br>
+				style="width: 148.3917579849872px; height: 148.3917579849872px; border: none; box-shadow: none; background: transparent;">
 		</div>
 		<div class="absolute-element"
 			 style="text-align: left; position: absolute; width: 531.9123630672926px; height: 237px; z-index: 4; left: 331px; top: 419px; max-height: none; max-width: none;">
-			<font color="#00ff00">"Function with a callback, object, or array as the last argument: no space after the
+			"Function with a callback, object, or array as the last argument: no space after the
 				last argument" <br>
 
-				<div style="text-align: right;">
-					<font
-						style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: 24px;">-</font>
-					<span> </span>
-					<font
-						style="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: 24px;">jQuery
-						Style Guide</font>
-				</div>
-			</font>
+			<div style="text-align: right;">
+				- jQuery Style Guide
+			</div>
 		</div>
 	</section>
 	<section data-id="0c07d405a31fd55a3e7c53d5fd0c7f5e" class="">
 		<h2>MediaWiki?</h2>
 
 		<div>
-			<pre><code><span style="font-family: monospace;">eatPretzels ( types, function() {</span></code><code><span>    return types['salty'];</span></code><code><span>} );</span></code></pre>
+			<pre><code>eatPretzels ( types, function() {</code><code><span>    return types['salty'];</span></code><code><span>} );</span></code></pre>
 		</div>
 
 		<div>
@@ -258,7 +375,7 @@
 			<img
 				src="https://s3.amazonaws.com/media-p.slid.es/uploads/lizlee/images/332844/red-arrow-up-right-md_copy.png"
 				class="absolute-element"
-				style="font-size: 36.51538848876953px; font-style: normal; font-variant: normal; max-width: none; max-height: none; position: absolute; width: 180.49906961557028px; height: 181.10850289891522px; z-index: 4; left: 51px; top: 194px;">
+				style="position: absolute; width: 180.49906961557028px; height: 181.10850289891522px; z-index: 4; left: 51px; top: 194px;">
 		</div>
 
 		<div class="absolute-element"
@@ -279,7 +396,7 @@
 
 	<h2 class="absolute-element"
 		style="position: absolute; width: 400px; height: 100px; z-index: 4; left: 279px; top: 254px; text-align: center; text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;">
-		<font style="font-size: 200px;" color="#ffffff">JSLint</font>
+		JSLint
 	</h2>
 
 
@@ -379,10 +496,10 @@
 		<div>
 			<br>
 		</div>
-		<div>"As a developer, I want a clear and well documented guide covering coding conventions, patterns and best
-			practices for JavaScript development at Wikia <font color="#00ff00">along with tools to help me in making my
-				code compliant.</font>"
-		</div>
+		<blockquote>"As a developer, I want a clear and well documented guide covering coding conventions, patterns and best
+			practices for JavaScript development at Wikia <em>along with tools to help me in making my
+				code compliant</em>."
+		</blockquote>
 
 	</section>
 	<section data-id="d0e2101bab433fcf1735f7a03b9d01e6" class="">
