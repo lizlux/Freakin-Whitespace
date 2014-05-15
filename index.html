@@ -83,14 +83,13 @@
 		</aside>
 	</section>
 	<section>
-		<div style="text-align: center">
-			<img src="images/Wikia_Logo.svg" style="width: 300px;">
-		</div>
+		<h3>Challenges:</h3>
 		<ul>
-			<li class="fragment" data-fragment-index="0">Historically full stack engineers and generalists</li>
-			<li class="fragment" data-fragment-index="1">
-				Steady growth:
-				<ul class="fragment" data-fragment-index="2">
+			<li>Heavily customized MediaWiki</li>
+			<li>Scrappy startup</li>
+			<li>
+				Growth:
+				<ul>
 					<li>2010: 40 Employees</li>
 					<li>2014: 236 Employees</li>
 					<li>600% in 4 years</li>
@@ -102,8 +101,9 @@
 		</div>
 		<aside class="notes">
 			<ul>
+				<li>"Highly customized version of MediaWiki" (2002)</li>
+				<li>Full stack engineers and generalists</li>
 				<li>Not exactly "rapid" growth, but "steady" growth</li>
-				<li>Marketing department will love that image juxtaposition</li>
 				<li>Interesting fact: I google image searched "code base anarchy" and this image shows up in the first page of results:</li>
 			</ul>
 		</aside>
@@ -121,8 +121,13 @@
 	</section>
 </section>
 <section>
-	<div>Squeaky wheel... </div>
-	<div class="fragment" data-fragment-index="0">... gets to lead the JavaScript Coding Conventions group!</div>
+	<section>
+		<img src="images/nerdfight.png">
+	</section>
+	<section>
+		<div>Squeaky wheel... </div>
+		<div class="fragment" data-fragment-index="0">... gets to lead the JavaScript Coding Conventions group!</div>
+	</section>
 </section>
 <section data-id="be93de882ff95a9ae4dd8b33a1217d66" class="">
 	<h2>Our Mission</h2>
@@ -136,6 +141,16 @@
 <section>
 	<section>
 		<h2>#1: Trust the code</h2>
+	</section>
+	<section>
+		<pre><code data-trim contenteditable>
+$("#foo").addClass("active");
+$("#foo").width(200);
+$("#foo").click();
+		</code></pre>
+		<aside class="notes">
+			"Unclear on the concept" - Mom
+		</aside>
 	</section>
 	<section>
 		<h2>Code Smells</h2>
@@ -164,36 +179,40 @@
 			</ul>
 		</aside>
 	</section>
+	<section>
+<pre><code>$("#foo").addClass("active");
+$("#foo").width(200);
+$("#foo").click();
+$("#foo").css('color','blue'); // WTF?!
+$("#foo").text('derp!'); // >.<
+</code></pre>
+	</section>
+	<section>
+		<h2>Rulez!</h2>
+		<img src="images/jQuery_caching_rule.png">
+		<p>
+			<small>
+				<a href="https://github.com/Wikia/guidelines/blob/master/JavaScript/CodingConventions.md#caching-jquery-objects">https://github.com/Wikia/guidelines/blob/master/JavaScript/CodingConventions.md#caching-jquery-objects</a>
+			</small>
+		</p>
+	</section>
 </section>
 <section>
 	<section>
 		<h2>#2: Don't reinvent the wheel</h2>
 	</section>
 	<section>
+		<blockquote>
+			As a developer, I want a clear and well documented guide covering coding conventions, patterns and best practices for JavaScript development at Wikia along with <em>tools to help me in making my code compliant.</em>
+		</blockquote>
+	</section>
+	<section>
 		<h3>What we did wrong:</h3>
 		<p class="fragment" data-fragment-index="0">Wrote all the rules</p>
-		<p class="fragment" data-fragment-index="1">Then looked into tools</p>
+		<p class="fragment" data-fragment-index="0"><i>Then</i> looked at the tools</p>
 		<aside class="notes">
 			Turns out others have done this before!
 		</aside>
-	</section>
-	<section>
-		<ul style="word-break: break-word; width: 80%;">
-			<li>
-				Google: <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml</a>
-			</li>
-			<li>
-				jQuery: <a href="https://github.com/jquery/contribute.jquery.org/blob/master/pages/style-guide/js.md">https://github.com/jquery/contribute.jquery.org/blob/master/pages/style-guide/js.md</a>
-			</li>
-			<li>
-				AirBnb: <a href="https://github.com/airbnb/javascript">https://github.com/airbnb/javascript</a>
-			</li>
-		</ul>
-	</section>
-	<section>
-		<blockquote>
-As a developer, I want a clear and well documented guide covering coding conventions, patterns and best practices for JavaScript development at Wikia along with <em>tools to help me in making my code compliant.</em>
-		</blockquote>
 	</section>
 	<section>
 		<h2>Freakin' Whitespace!</h2>
@@ -202,49 +221,110 @@ As a developer, I want a clear and well documented guide covering coding convent
 			We'll talk more about this later, but it brings me to my next key principle...
 		</aside>
 	</section>
+	<section>
+		<h2>White space</h2>
+
+		<div>Went with jQuery because why not?</div>
+		<div>
+			<br>
+		</div>
+		<div>Here's why not:&nbsp;</div>
+		<div><pre><code data-trim contenteditable>
+eatPretzels( type, function() {
+    return 'Yum!';
+});
+		</code></pre>
+		</div>
+		<div class="absolute-element"
+			 style="position: absolute; width: 189px; height: 186px; z-index: 4; left: 43px; top: 331px;">
+			<img
+				src="images/red-arrow-up-right.png"
+				style="width: 148.3917579849872px; height: 148.3917579849872px; border: none; box-shadow: none; background: transparent;">
+		</div>
+		<div class="absolute-element"
+			 style="text-align: left; position: absolute; width: 531.9123630672926px; height: 237px; z-index: 4; left: 331px; top: 419px; max-height: none; max-width: none;">
+			"Function with a callback, object, or array as the last argument: no space after the
+			last argument" <br>
+
+			<div style="text-align: right;">
+				- jQuery Style Guide
+			</div>
+		</div>
+	</section>
 </section>
 <section>
-	<section>
-		<h2>#3: Programmers are lazy</h2>
-		<p class="fragment" data-fragment-index="0">Good programmers are anyway!</p>
-		<aside class="notes">
-			<ul>
-				<li>Good, lazy programmers are expensive and need streamlined work environments.</li>
-				<li>It's critical that we provide tools to automatically check and enforce coding conventions</li>
-			</ul>
-		</aside>
+	<section class="color-blast">
+		<h2>
+			JSLint
+		</h2>
 	</section>
 	<section>
-		<p>It should be harder for programmers to fail than succeed.</p>
-		<p>Pre-commit hooks, IDE plugins, auto-updating whitespace</p>
-		<p class="fragment" data-fragment-index="0">"Fool me once..."</p>
+		<h2>JSLint</h2>
 
-		<aside class="notes">
-			<p>As George W. Bush famously did not say: Fool me once, shame on you. Fool me twice, shame on me!</p>
-			<p>As leaders and concerned citizens, it's our responsibility to provide good tools to keep the machine well oiled.</p>
-		</aside>
-	</section>
-</section>
-
-
-
-
-
-<section data-id="d1f43c0ff1fc09e949f9539c207711f5" class="">
-	<h2>Why Have a Style Guide Anyway?</h2>
-	<br>
-
-	<div>
 		<ul>
-			<li class="fragment" data-fragment-index="0">Broken Windows Effect&nbsp;</li>
-			<li class="fragment" data-fragment-index="1">Set the stage for quality</li>
-			<li class="fragment" data-fragment-index="2">Best practices</li>
-			<li class="fragment" data-fragment-index="3">Sanity</li>
+			<li>Created by Douglas Crockford, in 2002
+				<ul>
+					<li>“Discovered” JSON (created the spec)</li>
+					<li>Author of <i>JavaScript, The Good Parts</i></li>
+				</ul>
+			</li>
+			<li>2002 - the wild west of JavaScript
+				<ul>
+					<li>Mozilla 1.0</li>
+					<li>Netscape</li>
+					<li>IE6</li>
+				</ul>
+			</li>
 		</ul>
-	</div>
+	</section>
+	<section>
+		<h2>JSLint Style Rules</h2>
+		<ul>
+			<li>Whitespace set up to read like english:
+				<ul>
+					<li>Spaces go after commas and colons, not before</li>
+					<li>Spaces after <code>if</code> <code>while</code> <code>for</code> and <code>function</code> as they would in English</li>
+					<li>No space between function name and invoking parentheses</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<section>
+		<p class="upper justified" style="font-size: 150%;
+">backinthedaytheromansdidntusespacesorpunctuationandmisunderstandingsarosesotheyhadtoindroducespacesintotheirwriting</p>
+		<aside class="notes">
+			Back in the day the romans didn't use spaces or punctuation and misunderstandings arose so they had to indroduce spaces into their writing.
+		</aside>
+	</section>
+	<section>
+		<div>
+			<ul>
+				<li class="fragment" data-fragment-index="0">
+					Commonly used
+					<ul>
+						<li class="fragment" data-fragment-index="1">Comma last: 92%</li>
+						<li class="fragment" data-fragment-index="2">Indent with spaces: 80%</li>
+						<li class="fragment" data-fragment-index="3">
+							<span>No argument spaces: &nbsp;94%</span>
+						</li>
+					</ul>
+				</li>
+				<li class="fragment" data-fragment-index="4">Lot's of tools work with it</li>
+				<li class="fragment" data-fragment-index="5">It works</li>
+				<li class="fragment" data-fragment-index="6">New employees might be familiar</li>
+			</ul>
+		</div>
+	</section>
+
+
+
 </section>
-<section data-id="732d9b9596332290103660e024113ea6" class="stack">
-	<section data-id="c2dbbfb6adddd12ca40fee9f11a645c7" class="">
+
+
+
+
+<section>
+	<section>
 		<h2>Standards</h2>
 
 		<div>
@@ -335,99 +415,39 @@ if (true) { ...</code></pre>
 		</p>
 	</section>
 </section>
-<section data-id="c68539aa2a3d512ab2020ab47b455edc" class="stack">
-	<section data-id="5b388f58e6530805ddbc3a544b8a8397">
-		<h2>White space</h2>
-
-		<div>Went with jQuery because why not?</div>
-		<div>
-			<br>
-		</div>
-		<div>Here's why not:&nbsp;</div>
-		<div>
-<pre><code>eatPretzels( type, function() {
-    return 'Yum!';
-});</code></pre>
-		</div>
-		<div class="absolute-element"
-			 style="position: absolute; width: 189px; height: 186px; z-index: 4; left: 43px; top: 331px;">
-			<img
-				src="https://s3.amazonaws.com/media-p.slid.es/uploads/lizlee/images/332822/red-arrow-up-right-md_copy.png"
-				style="width: 148.3917579849872px; height: 148.3917579849872px; border: none; box-shadow: none; background: transparent;">
-		</div>
-		<div class="absolute-element"
-			 style="text-align: left; position: absolute; width: 531.9123630672926px; height: 237px; z-index: 4; left: 331px; top: 419px; max-height: none; max-width: none;">
-			"Function with a callback, object, or array as the last argument: no space after the
-				last argument" <br>
-
-			<div style="text-align: right;">
-				- jQuery Style Guide
-			</div>
-		</div>
-	</section>
-	<section data-id="0c07d405a31fd55a3e7c53d5fd0c7f5e" class="">
-		<h2>MediaWiki?</h2>
-
-		<div>
-			<pre><code>eatPretzels ( types, function() {</code><code><span>    return types['salty'];</span></code><code><span>} );</span></code></pre>
-		</div>
-
-		<div>
-			<img
-				src="https://s3.amazonaws.com/media-p.slid.es/uploads/lizlee/images/332844/red-arrow-up-right-md_copy.png"
-				class="absolute-element"
-				style="position: absolute; max-height: none; max-width: none; width: 180.49906961557028px; height: 181.10850289891522px; z-index: 4; left: 294px; top: 151px;">
-		</div>
-
-		<div>
-			<img
-				src="https://s3.amazonaws.com/media-p.slid.es/uploads/lizlee/images/332844/red-arrow-up-right-md_copy.png"
-				class="absolute-element"
-				style="position: absolute; width: 180.49906961557028px; height: 181.10850289891522px; z-index: 4; left: 51px; top: 194px;">
-		</div>
-
-		<div class="absolute-element"
-			 style="position: absolute; width: 156px; height: 56px; z-index: 4; left: 145px; top: 388px;">
-			<p>Annoying</p>
-		</div>
-
-		<div class="absolute-element"
-			 style="position: absolute; width: 195px; height: 56px; z-index: 4; left: 390px; top: 350px;">
-			<p>Inconsistant</p>
-		</div>
-	</section>
-</section>
-<section data-id="db24a19992a76591a6d9dc8876860850" class="">
-	<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/lizlee/images/345340/color-blast.jpg"
-		 class="absolute-element"
-		 style="position: absolute; max-height: none; max-width: none; width: 1007.1236307027754px; height: 838.2514373110989px; z-index: 4; left: -58px; top: -88px;">
-
-	<h2 class="absolute-element"
-		style="position: absolute; width: 400px; height: 100px; z-index: 4; left: 279px; top: 254px; text-align: center; text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;">
-		JSLint
-	</h2>
 
 
-</section>
-<section data-id="28fef743cd72e574665dff79093f4b87" class="">
-	<h2>JSLint</h2>
 
-	<div>
-		<ul>
-			<li class="fragment" data-fragment-index="0">Commonly used</li>
+
+
+
+
+
+<section>
+	<section>
+		<h2>#3: Programmers are lazy</h2>
+		<p class="fragment" data-fragment-index="0">Good programmers are anyway!</p>
+		<aside class="notes">
 			<ul>
-				<li class="fragment" data-fragment-index="1">Comma last: 92%</li>
-				<li class="fragment" data-fragment-index="2">Indent with spaces: 80%</li>
-				<li class="fragment" data-fragment-index="3">
-					<span>No argument spaces: &nbsp;94%</span>
-				</li>
+				<li>Good, lazy programmers are expensive and need streamlined work environments.</li>
+				<li>It's critical that we provide tools to automatically check and enforce coding conventions</li>
 			</ul>
-			<li class="fragment" data-fragment-index="4">Lot's of tools work with it</li>
-			<li class="fragment" data-fragment-index="5">It works</li>
-			<li class="fragment" data-fragment-index="6">New employees might be familiar</li>
-		</ul>
-	</div>
+		</aside>
+	</section>
+	<section>
+		<p>It should be harder for programmers to fail than succeed.</p>
+		<p class="fragment" data-fragment-index="0">Pre-commit hooks, IDE plugins, auto-updating whitespace</p>
+		<p class="fragment" data-fragment-index="1">"Fool me once..."</p>
+
+		<aside class="notes">
+			<p>As George W. Bush famously did not say: Fool me once, shame on you. Fool me twice, shame on me!</p>
+			<p>As leaders and concerned citizens, it's our responsibility to provide good tools to keep the machine well oiled.</p>
+		</aside>
+	</section>
 </section>
+
+
+
 <section data-id="c0ce95f3f6f6a4027afe7405268264dc" class="">
 	<h2>Our Philosophy</h2>
 
@@ -568,6 +588,97 @@ if (true) { ...</code></pre>
 	<div>liz at lizlux dot net</div>
 	<div>@lizlux</div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+	<h3>Airbnb</h3>
+	<p><small><a href="https://github.com/airbnb/javascript">https://github.com/airbnb/javascript</a></small></p>
+	<ul class="reveal-list">
+		<li>Types</li>
+		<li>Objects</li>
+		<li>Arrays</li>
+		<li>Strings</li>
+		<li>Functions</li>
+		<li>Properties</li>
+		<li>Variables</li>
+		<li>Hoisting</li>
+		<li>Conditional Expressions & Equality</li>
+		<li>Blocks</li>
+		<li>Comments</li>
+		<li>Whitespace</li>
+		<li>Commas</li>
+		<li>Semicolons</li>
+		<li>Type Casting & Coercion</li>
+		<li>Naming Conventions</li>
+		<li>Accessors</li>
+		<li>Constructors</li>
+		<li>Events</li>
+		<li>Modules</li>
+		<li>jQuery</li>
+		<li>ECMAScript 5 Compatibility</li>
+		<li>Testing</li>
+		<li>Performance</li>
+		<li>Resources</li>
+		<li>In the Wild</li>
+		<li>Translation</li>
+		<li>The JavaScript Style Guide Guide</li>
+		<li>Contributors</li>
+		<li>License</li>
+	</ul>
+</section>
+
+
+
+
+
+<section data-id="c68539aa2a3d512ab2020ab47b455edc" class="stack">
+	<section data-id="0c07d405a31fd55a3e7c53d5fd0c7f5e" class="">
+		<h2>MediaWiki?</h2>
+
+		<div>
+			<pre><code>eatPretzels ( types, function() {</code><code><span>    return types['salty'];</span></code><code><span>} );</span></code></pre>
+		</div>
+
+		<div>
+			<img
+				src="https://s3.amazonaws.com/media-p.slid.es/uploads/lizlee/images/332844/red-arrow-up-right-md_copy.png"
+				class="absolute-element"
+				style="position: absolute; max-height: none; max-width: none; width: 180.49906961557028px; height: 181.10850289891522px; z-index: 4; left: 294px; top: 151px;">
+		</div>
+
+		<div>
+			<img
+				src="https://s3.amazonaws.com/media-p.slid.es/uploads/lizlee/images/332844/red-arrow-up-right-md_copy.png"
+				class="absolute-element"
+				style="position: absolute; width: 180.49906961557028px; height: 181.10850289891522px; z-index: 4; left: 51px; top: 194px;">
+		</div>
+
+		<div class="absolute-element"
+			 style="position: absolute; width: 156px; height: 56px; z-index: 4; left: 145px; top: 388px;">
+			<p>Annoying</p>
+		</div>
+
+		<div class="absolute-element"
+			 style="position: absolute; width: 195px; height: 56px; z-index: 4; left: 390px; top: 350px;">
+			<p>Inconsistent</p>
+		</div>
+	</section>
+</section>
+
+
+
+
+
 <!-- Example of nested vertical slides -->
 <section>
 	<section>

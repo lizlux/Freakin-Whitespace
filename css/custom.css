@@ -25,3 +25,29 @@
 .reveal blockquote em {
 	color: #006600;
 }
+
+.reveal .reveal-list {
+	height: 400px;
+	overflow: auto;
+	border-bottom: 2px solid #CACACA;
+	list-style: disc inside none;
+	padding: 0 20px;
+}
+
+.color-blast {
+	background-image: url('/images/stairs-to-heaven.jpg');
+	background-size: cover;
+}
+
+.color-blast h2 {
+	font-size: 3em;
+	margin: 35% 0;
+}
+
+.upper {
+	text-transform: uppercase;
+}
+.justified {
+	text-align: justify;
+	word-wrap: break-word;
+}
