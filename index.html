@@ -188,6 +188,13 @@ $("#foo").text('derp!'); // >.<
 </code></pre>
 	</section>
 	<section>
+		<p>"Fool me once..."</p>
+		<aside class="notes">
+			<p>As George W. Bush famously did not say: Fool me once, shame on you. Fool me twice, shame on me!</p>
+			<p>As leaders and concerned citizens, it's our responsibility to provide good tools to keep the machine well oiled.</p>
+		</aside>
+	</section>
+	<section>
 		<h2>Rulez!</h2>
 		<img src="images/jQuery_caching_rule.png">
 		<p>
@@ -290,35 +297,174 @@ eatPretzels( type, function() {
 		</ul>
 	</section>
 	<section>
-		<p class="upper justified" style="font-size: 150%;
-">backinthedaytheromansdidntusespacesorpunctuationandmisunderstandingsarosesotheyhadtoindroducespacesintotheirwriting</p>
+		<p class="upper justified">
+			backinthedaytheromansdidntusespacesorpunctuationandmisunderstandingsarosesotheyhadtoindroducespacesintotheirwriting
+		</p>
 		<aside class="notes">
 			Back in the day the romans didn't use spaces or punctuation and misunderstandings arose so they had to indroduce spaces into their writing.
 		</aside>
 	</section>
-	<section>
-		<div>
-			<ul>
-				<li class="fragment" data-fragment-index="0">
-					Commonly used
-					<ul>
-						<li class="fragment" data-fragment-index="1">Comma last: 92%</li>
-						<li class="fragment" data-fragment-index="2">Indent with spaces: 80%</li>
-						<li class="fragment" data-fragment-index="3">
-							<span>No argument spaces: &nbsp;94%</span>
-						</li>
-					</ul>
-				</li>
-				<li class="fragment" data-fragment-index="4">Lot's of tools work with it</li>
-				<li class="fragment" data-fragment-index="5">It works</li>
-				<li class="fragment" data-fragment-index="6">New employees might be familiar</li>
-			</ul>
-		</div>
-	</section>
-
-
-
 </section>
+<section>
+	<section>
+		<p>
+			<a href="http://sideeffect.kr/popularconvention/#javascript">http://sideeffect.kr/popularconvention/#javascript</a>
+		</p>
+	</section>
+	<section>
+		<img src="images/graphs/comma.png">
+	</section>
+	<section>
+		<img src="images/graphs/space.png">
+	</section>
+	<section>
+		<img src="images/graphs/function.png">
+	</section>
+	<section>
+		<img src="images/graphs/arguments.png">
+	</section>
+	<section>
+		<img src="images/graphs/object.png">
+	</section>
+	<section>
+		<img src="images/graphs/conditional.png">
+	</section>
+	<section>
+		<img src="images/graphs/quote.png">
+	</section>
+</section>
+<section>
+	<section>
+		<h2>JSLint</h2>
+		<ul>
+			<li>Commonly used</li>
+			<li>It works</li>
+			<li>New employees might already be familiar</li>
+			<li>Code quality tool compatibility
+				<ul>
+					<li>js-beautify: "jslint_happy"</li>
+				</ul>
+			</li>
+			<li>JSHint</li>
+		</ul>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>#3: Programmers are lazy</h2>
+		<p class="fragment" data-fragment-index="0">Good programmers are anyway!</p>
+		<aside class="notes">
+			<ul>
+				<li>Good, lazy programmers are expensive and need streamlined work environments.</li>
+				<li>It's critical that we provide tools to automatically check and enforce coding conventions</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<p>It should be harder for programmers to fail than succeed.</p>
+		<ul>
+			<li>Pre-commit hooks</li>
+			<li>IDE plugins</li>
+			<li>auto-updating whitespace (js-beautify)</li>
+		</ul>
+	</section>
+	<section>
+		<h2>Tools</h2>
+		<ul>
+			<li>JSHint</li>
+			<li>JS-Beautify</li>
+			<li>JSCS</li>
+		</ul>
+	</section>
+</section>
+<section>
+	<section>
+		<h2>JSHint</h2>
+		<ul>
+			<li>Created by Anton Kovalyov in 2010</li>
+			<li>Fork of JSLint</li>
+			<li>Community driven</li>
+			<li>More configurable and forgiving than JSHint</li>
+		</ul>
+	</section>
+	<section>
+		<blockquote>Your sadly pathetic bleatings are harshing my mellow.</blockquote>
+		<p style="text-align: right">~ Douglas Crockford</p>
+		<aside class="notes">
+			At the top of Anton Kovalyov's blog post announcing JSHint
+		</aside>
+	</section>
+	<section>
+		<blockquote>That is insanely stupid code. I am not going to dumb down JSMin for this case.</blockquote>
+		<p style="text-align: right">~ Douglas Crockford</p>
+		<aside class="notes">
+			Git hub comment
+		</aside>
+	</section>
+</section>
+<section>
+	<h2>JS-Beautify</h2>
+	<ul>
+		<li>Updates whitespace for you.</li>
+		<li>Developers are lazy!</li>
+	</ul>
+</section>
+<section>
+	<h2>JSCS</h2>
+	<ul>
+		<li>JavaScript Code Sniffer</li>
+		<li>Enforces whitespace and style rules</li>
+		<li>Compliments JSHint</li>
+	</ul>
+</section>
+<section>
+	<h2>SCSS Style Guide</h2>
+	<ul>
+		<li>Causes.com's scss-lint</li>
+		<li>analyze-css</li>
+	</ul>
+</section>
+<section>
+	<section>
+		<h2>Resources</h2>
+		<ul>
+			<li><a href="https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google’s style guide</a></li>
+			<li><a href="https://github.com/airbnb/javascript">AirBnB’s style guide</a></li>
+			<li><a href="http://javascript.crockford.com/code.html">Douglas Crockford’s Coding Conventions for the JavaScript Programing Language</a></li>
+			<li><a href="http://jslint.com/">JSLint</a></li>
+			<li><a href="http://jshint.com/">JSHint</a> </li>
+			<li><a href="https://github.com/einars/js-beautify">JS-Beautify</a></li>
+			<li><a href="https://github.com/mdevils/node-jscs">JSCS</a></li>
+			<li><a href="https://github.com/causes/scss-lint">SCSS-Lint</a></li>
+			<li><a href="https://www.npmjs.org/package/analyze-css">Analyze-CSS</a></li>
+		</ul>
+	</section>
+	<section>
+		<h2>Other References</h2>
+		<ul>
+			<li><a href="https://github.com/twbs/bootstrap/issues/3057#issuecomment-5135512">https://github.com/twbs/bootstrap/issues/3057#issuecomment-5135512</a></li>
+			<li><a href="https://www.youtube.com/watch?v=taaEzHI9xyY">https://www.youtube.com/watch?v=taaEzHI9xyY</a></li>
+			<li><a href="http://techcrunch.com/2010/02/07/wikia-says-its-profitable-goes-on-hiring-spree/">http://techcrunch.com/2010/02/07/wikia-says-its-profitable-goes-on-hiring-spree/</a></li>
+			<li><a href="http://anton.kovalyov.net/p/why-jshint/">http://anton.kovalyov.net/p/why-jshint/</a></li>
+		</ul>
+	</section>
+</section>
+<section>
+	<h2>Questions?</h2>
+	<div>liz at lizlux dot net</div>
+	<div>@lizlux</div>
+</section>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -423,28 +569,6 @@ if (true) { ...</code></pre>
 
 
 
-<section>
-	<section>
-		<h2>#3: Programmers are lazy</h2>
-		<p class="fragment" data-fragment-index="0">Good programmers are anyway!</p>
-		<aside class="notes">
-			<ul>
-				<li>Good, lazy programmers are expensive and need streamlined work environments.</li>
-				<li>It's critical that we provide tools to automatically check and enforce coding conventions</li>
-			</ul>
-		</aside>
-	</section>
-	<section>
-		<p>It should be harder for programmers to fail than succeed.</p>
-		<p class="fragment" data-fragment-index="0">Pre-commit hooks, IDE plugins, auto-updating whitespace</p>
-		<p class="fragment" data-fragment-index="1">"Fool me once..."</p>
-
-		<aside class="notes">
-			<p>As George W. Bush famously did not say: Fool me once, shame on you. Fool me twice, shame on me!</p>
-			<p>As leaders and concerned citizens, it's our responsibility to provide good tools to keep the machine well oiled.</p>
-		</aside>
-	</section>
-</section>
 
 
 
@@ -550,45 +674,6 @@ if (true) { ...</code></pre>
 
 	</section>
 </section>
-<section data-id="9c450d4272e1882c0b39e9ea4cc29032" class="">
-	<h2>Resources</h2>
-
-	<ul>
-		<li>Google’s style guide: https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml</li>
-		<li>AirBnB’s style guide</li>
-		<li>Douglas Crockford’s Coding Conventions for the JavaScript Programing Language</li>
-	</ul>
-</section>
-<section data-id="863e7eb932aaf147140427ba8978b2f1" class="">
-	<h2>SCSS Style Guide</h2>
-
-	<div>
-		<ul>
-			<li>Causes.com's scss-lint
-			</li>
-			<li>analyze-css</li>
-		</ul>
-	</div>
-</section>
-<section data-id="1511f57aaeedc884652a1907ee42d840" class="">
-	<h2>Questions?</h2>
-
-	<div>
-		<br>
-	</div>
-	<div>
-		<br>
-	</div>
-	<div>
-		<br>
-	</div>
-	<div>
-		<br>
-	</div>
-	<div>liz at lizlux dot net</div>
-	<div>@lizlux</div>
-</section>
-
 
 
 
