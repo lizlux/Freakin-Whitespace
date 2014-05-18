@@ -79,6 +79,30 @@
 			<ul>
 				<li>Marketing department asked me to say this</li>
 				<li>Lot's of entertainment and gaming wikis</li>
+				<li>Biggest site you've never heard of</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<h3>Awesomeness:</h3>
+		<ul>
+			<li>Open source</li>
+			<li>Community driven</li>
+			<li>Ridiculous amounts of knowledge</li>
+			<li>Great work/life balance ;)</li>
+		</ul>
+		<aside class="notes">
+			<ul>
+				<li>Every commit I've ever made is on GitHub</li>
+				<li>And we're hiring!</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<img src="images/falkor.jpg">
+		<aside class="notes">
+			<ul>
+				<li>Great pyrenees named Falkor</li>
 			</ul>
 		</aside>
 	</section>
@@ -96,9 +120,6 @@
 				</ul>
 			</li>
 		</ul>
-		<div class="absolute-element fragment" data-fragment-index="5" style="position: absolute; top: 170px; width: 100%; text-align: right; box-sizing: border-box; padding-right: 130px;">
-			<img src="images/anarchy.png" style="width: 300px;">
-		</div>
 		<aside class="notes">
 			<ul>
 				<li>"Highly customized version of MediaWiki" (2002)</li>
@@ -123,6 +144,11 @@
 <section>
 	<section>
 		<img src="images/nerdfight.png">
+		<aside class="notes">
+			<ul>
+				<li>No one place to point to to say: "This is how we do things here"</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<div>Squeaky wheel... </div>
@@ -143,11 +169,26 @@
 		<h2>#1: Trust the code</h2>
 	</section>
 	<section>
-		<pre><code data-trim contenteditable>
+<pre><code data-trim contenteditable>
 $("#foo").addClass("active");
 $("#foo").width(200);
 $("#foo").click();
-		</code></pre>
+</code></pre>
+		<div class="fragment" data-fragment-index="0">
+<pre><code data-trim contenteditable>
+var $foo = $("#foo");
+$foo.addClass("active");
+$foo.width(200);
+$foo.click();
+</code></pre>
+</div>
+		<div class="fragment" data-fragment-index="1">
+<pre><code data-trim contenteditable>
+$("#foo").addClass("active")
+    .width(200)
+    .click();
+</code></pre>
+		</div>
 		<aside class="notes">
 			"Unclear on the concept" - Mom
 		</aside>
@@ -223,25 +264,17 @@ $("#foo").text('derp!'); // >.<
 	</section>
 	<section>
 		<h2>Freakin' Whitespace!</h2>
-		<p class="fragment" data-fragment-index="0">Tons of legacy code means we needed automated tools, but none of the ones out there matched our conventions.</p>
-		<aside class="notes">
-			We'll talk more about this later, but it brings me to my next key principle...
-		</aside>
 	</section>
 	<section>
 		<h2>White space</h2>
 
-		<div>Went with jQuery because why not?</div>
-		<div>
-			<br>
-		</div>
+		<p>Went with jQuery because why not?</p>
 		<div>Here's why not:&nbsp;</div>
-		<div><pre><code data-trim contenteditable>
+<pre><code data-trim contenteditable>
 eatPretzels( type, function() {
     return 'Yum!';
 });
-		</code></pre>
-		</div>
+</code></pre>
 		<div class="absolute-element"
 			 style="position: absolute; width: 189px; height: 186px; z-index: 4; left: 43px; top: 331px;">
 			<img
@@ -257,6 +290,34 @@ eatPretzels( type, function() {
 				- jQuery Style Guide
 			</div>
 		</div>
+		<aside class="notes">
+			<ul>
+				<li>Tons of legacy code means we needed automated tools, but none of the ones out there matched our conventions.</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<h2>MediaWiki</h2>
+		<pre><code>eatDoughnuts( type, function() {
+    return flavors['jelly'];
+} );</code></pre>
+		<div class="absolute-element"
+			 style="position: absolute; width: 189px; height: 186px; z-index: 4; left: 48px; top: 172px;">
+			<img
+				src="images/red-arrow-up-right.png"
+				style="width: 148.3917579849872px; height: 148.3917579849872px; border: none; box-shadow: none; background: transparent;">
+		</div>
+		<div class="absolute-element"
+			 style="position: absolute; width: 189px; height: 186px; z-index: 4; left: 246px; top: 148px;">
+			<img
+				src="images/red-arrow-up-right.png"
+				style="width: 148.3917579849872px; height: 148.3917579849872px; border: none; box-shadow: none; background: transparent;">
+		</div>
+		<aside class="notes">
+			<ul>
+				<li>Inconsistent because parentheses get extra white space but square brackets don't </li>
+			</ul>
+		</aside>
 	</section>
 </section>
 <section>
@@ -264,6 +325,11 @@ eatPretzels( type, function() {
 		<h2>
 			JSLint
 		</h2>
+		<aside class="notes">
+			<ul>
+				<li>Originally didn't go with it because of it's strictness, but it has many redeeming qualities</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<h2>JSLint</h2>
@@ -283,6 +349,13 @@ eatPretzels( type, function() {
 				</ul>
 			</li>
 		</ul>
+		<aside class="notes">
+			<ul>
+				<li>Mozilla 1.0 had just come out</li>
+				<li>Netscape was still widely supported</li>
+				<li>IE6 was the gold standard of browsers</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<h2>JSLint Style Rules</h2>
@@ -295,14 +368,39 @@ eatPretzels( type, function() {
 				</ul>
 			</li>
 		</ul>
+		<aside class="notes">
+			<ul>
+				<li>Style rules and language rules</li>
+				<li>Modeled rules after English</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
-		<p class="upper justified">
-			backinthedaytheromansdidntusespacesorpunctuationandmisunderstandingsarosesotheyhadtoindroducespacesintotheirwriting
+		<p class="upper justified">	backinthedaytheromansdidntusespacesorpunctuationandmisunderstandingsarosesotheyhadtoindroducespacesintotheirwriting
 		</p>
 		<aside class="notes">
 			Back in the day the romans didn't use spaces or punctuation and misunderstandings arose so they had to indroduce spaces into their writing.
 		</aside>
+	</section>
+	<section>
+		<p class="upper justified">	backintheday theromans    didnt usespa cesorpunctuationa ndmisunder standingsa rosesotheyh adtoind roducespaces intotheirwriting
+		</p>
+		<aside class="notes">
+			Not only whitespace, but consistant and sensical whitespace please.
+		</aside>
+	</section>
+	<section>
+		<h2>Language Rules</h2>
+		<blockquote>If there is a feature of a lanugage that is sometimes problematic, and if it can be replaced with another feature that is more reliable, then always use the more reliable feature.</blockquote>
+		<p style="text-align: right">~ Douglas Crockford</p>
+	</section>
+	<section>
+		<h2>EQEQ "=="</h2>
+		<pre><code>// Bad
+(foo == 0)
+
+// Good
+(foo === 0)</code></pre>
 	</section>
 </section>
 <section>
@@ -310,27 +408,76 @@ eatPretzels( type, function() {
 		<p>
 			<a href="http://sideeffect.kr/popularconvention/#javascript">http://sideeffect.kr/popularconvention/#javascript</a>
 		</p>
+		<aside class="notes">
+			<ul>
+				<li>Analyzed last 6 months of check-ins for different languages</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<img src="images/graphs/comma.png">
+		<aside class="notes">
+			<ul>
+				<li>Comma First or Comma Last:</li>
+				<li>93% Comma First</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<img src="images/graphs/space.png">
+		<aside class="notes">
+			<ul>
+				<li>Spaces vs. Tabs</li>
+				<li>80% Spaces</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<img src="images/graphs/function.png">
+		<aside class="notes">
+			<ul>
+				<li>Function followed by one space vs. Function followed by no space</li>
+				<li>67% No Space</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<img src="images/graphs/arguments.png">
+		<aside class="notes">
+			<ul>
+				<li>Arguments definition with one space vs. no space</li>
+				<li>94% no space</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<img src="images/graphs/object.png">
+		<aside class="notes">
+			<ul>
+				<li>Object Literal Definition types</li>
+				<li>63% followed by spaces</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<img src="images/graphs/conditional.png">
+		<aside class="notes">
+			<ul>
+				<li>How to write conditional statement</li>
+				<li>78% Conditionals with one space</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<img src="images/graphs/quote.png">
+		<aside class="notes">
+			<ul>
+				<li>Single quote vs double quotes</li>
+				<li>56% Single; 43% Double</li>
+				<li>JSLint doesn't specify</li>
+				<li>Any number of reasons including "who the hell cares?"</li>
+			</ul>
+		</aside>
 	</section>
 </section>
 <section>
@@ -362,12 +509,17 @@ eatPretzels( type, function() {
 		</aside>
 	</section>
 	<section>
-		<p>It should be harder for programmers to fail than succeed.</p>
+		<p>It should be harder for us to fail than succeed.</p>
 		<ul>
 			<li>Pre-commit hooks</li>
 			<li>IDE plugins</li>
 			<li>auto-updating whitespace (js-beautify)</li>
 		</ul>
+		<aside class="notes">
+			<ul>
+				<li>Part of building a style guide is providing the tools to enforce it. </li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<h2>Tools</h2>
@@ -385,7 +537,7 @@ eatPretzels( type, function() {
 			<li>Created by Anton Kovalyov in 2010</li>
 			<li>Fork of JSLint</li>
 			<li>Community driven</li>
-			<li>More configurable and forgiving than JSHint</li>
+			<li>More configurable and forgiving than JSLint</li>
 		</ul>
 	</section>
 	<section>
@@ -402,13 +554,35 @@ eatPretzels( type, function() {
 			Git hub comment
 		</aside>
 	</section>
+	<section>
+		<h2>JSHint</h2>
+		<ul>
+			<li><a href="http://jshint.com/">JSHint.com</a></li>
+			<li>Config: .jshintrc</li>
+			<li>Ignore line or file</li>
+		</ul>
+		<aside class="notes">
+			<ul>
+				<li>Web interface, command line, IDE's, code climate</li>
+				<li>.jshintrc lives in root directory where it can be read by default</li>
+				<li>Ignore 3rd party or legacy code</li>
+			</ul>
+		</aside>
+	</section>
 </section>
 <section>
 	<h2>JS-Beautify</h2>
 	<ul>
 		<li>Updates whitespace for you.</li>
 		<li>Developers are lazy!</li>
+		<li>"jslint_happy"</li>
+		<li>Config: .jsbeautifyrc</li>
 	</ul>
+	<aside class="notes">
+		<ul>
+			<li>.jsbeautifyrc lives in root directory where it can be read by default</li>
+		</ul>
+	</aside>
 </section>
 <section>
 	<h2>JSCS</h2>
@@ -416,7 +590,21 @@ eatPretzels( type, function() {
 		<li>JavaScript Code Sniffer</li>
 		<li>Enforces whitespace and style rules</li>
 		<li>Compliments JSHint</li>
+		<li>Config: .jscs.json</li>
+		<li>Ex: "requireCurlyBraces" and "requireSpaceAfterKeywords"</li>
 	</ul>
+	<aside class="notes">
+		<ul>
+			<li>Check for redundancies between JSHint and JSCS b/c JSCS doesn't have an "ignore" clause</li>
+			<li>Style checking like:
+				<ul>
+					<li>require curly braces for `if`, `else`, `for`, `while`, `do` statements</li>
+					<li>require spaces after keywords: `if`, `else`, `for`, `while`, `function` etc.</li>
+				</ul>
+			</li>
+			<li>I suggest you go over these configurations and choose what's best for your oganization and code base</li>
+		</ul>
+	</aside>
 </section>
 <section>
 	<h2>SCSS Style Guide</h2>
@@ -424,6 +612,23 @@ eatPretzels( type, function() {
 		<li>Causes.com's scss-lint</li>
 		<li>analyze-css</li>
 	</ul>
+	<aside class="notes">
+		<ul>
+			<li>SCSS-Lint:
+				<ul>
+					<li>open source by causes.com</li>
+					<li>Stuff like alphabetizing properties, correct whitespace, too much specificity </li>
+				</ul>
+			</li>
+			<li>Analyze-CSS:
+				<ul>
+					<li>Analyzes compiled css after preprocessors like SCSS and SASS</li>
+					<li>Checks for duplicate rules due to mixins</li>
+					<li>Great for analyzing large code bases</li>
+				</ul>
+			</li>
+		</ul>
+	</aside>
 </section>
 <section>
 	<section>
