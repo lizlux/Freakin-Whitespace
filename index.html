@@ -61,12 +61,17 @@
 	<div style="text-align: center;">
 		<span>Front End Coding Conventions Team</span>
 	</div>
+	<aside>
+		<ul>
+			<li>@lizlux Github which is where these slides are available to clone</li>
+		</ul>
+	</aside>
 </section>
 <section data-id="93a99ed0945ea276907e39a164d0c8d7" class="">
 	<h2>My Goal</h2>
 
-	<div class="fragment" data-fragment-index="0">You too, can have a style guide...</div>
-	<div class="fragment" data-fragment-index="1">In less than 6 months!</div>
+	<p>You too, can have a style guide...</p>
+	<p>In less than 6 months!</p>
 </section>
 <section data-id="bbd0232ae9bb7bd45f23ef00af6d57bf" class="">
 	<section>
@@ -77,32 +82,26 @@
 		<div class="fragment" data-fragment-index="1">"Create your own wiki, we'll host it!"</div>
 		<aside class="notes">
 			<ul>
-				<li>Marketing department asked me to say this</li>
+				<li>"The social universe for fans by fans"</li>
+				<li>"Create your own wiki, we'll host it!"</li>
 				<li>Lot's of entertainment and gaming wikis</li>
-				<li>Biggest site you've never heard of</li>
+				<li>We build tools on top of media wiki</li>
 			</ul>
 		</aside>
 	</section>
 	<section>
 		<h3>Awesomeness:</h3>
+		<img src="images/falkor.jpg" style="float: right; width: 300px; margin-left: 20px;">
 		<ul>
 			<li>Open source</li>
 			<li>Community driven</li>
+			<li>400k+ wikias</li>
+			<li>100M monthly uniques</li>
 			<li>Ridiculous amounts of knowledge</li>
-			<li>Great work/life balance ;)</li>
 		</ul>
 		<aside class="notes">
 			<ul>
 				<li>Every commit I've ever made is on GitHub</li>
-				<li>And we're hiring!</li>
-			</ul>
-		</aside>
-	</section>
-	<section>
-		<img src="images/falkor.jpg">
-		<aside class="notes">
-			<ul>
-				<li>Great pyrenees named Falkor</li>
 			</ul>
 		</aside>
 	</section>
@@ -150,6 +149,8 @@
 			</ul>
 		</aside>
 	</section>
+</section>
+<section>
 	<section>
 		<div>Squeaky wheel... </div>
 		<div class="fragment" data-fragment-index="0">... gets to lead the JavaScript Coding Conventions group!</div>
@@ -170,12 +171,14 @@
 	</section>
 	<section>
 <pre><code data-trim contenteditable>
+// bad
 $("#foo").addClass("active");
 $("#foo").width(200);
 $("#foo").click();
 </code></pre>
 		<div class="fragment" data-fragment-index="0">
 <pre><code data-trim contenteditable>
+// better
 var $foo = $("#foo");
 $foo.addClass("active");
 $foo.width(200);
@@ -184,6 +187,7 @@ $foo.click();
 </div>
 		<div class="fragment" data-fragment-index="1">
 <pre><code data-trim contenteditable>
+// best
 $("#foo").addClass("active")
     .width(200)
     .click();
@@ -196,6 +200,11 @@ $("#foo").addClass("active")
 	<section>
 		<h2>Code Smells</h2>
 		<p>"Any symptom in the source code of a program that possibly indicates a deeper problem" <br>-Wikipedia</p>
+		<aside>
+			<ul>
+				<li>GIGO - Garbage in, garbage out</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<h3>Smells</h3>
@@ -214,16 +223,21 @@ $("#foo").addClass("active")
 		<p class="fragment" data-fragment-index="0">Smelly code begets smelly code</p>
 		<aside class="notes">
 			<ul>
-				<li>Sam Breed, CTO of Quick Left, jQuery conf 2013; "Fixing Broken Windows: 10 Small Things That Will Instantly Improve Your Project"</li>
+				<li>jQuery conf 2013; (Sam Breed, CTO of Quick Left; "Fixing Broken Windows: 10 Small Things That Will Instantly Improve Your Project")</li>
+				<li>Explain what broken windows effect is</li>
 				<li>Coding environment</li>
 				<li>Make your code trustworthy so you can trust your code!</li>
 			</ul>
 		</aside>
 	</section>
 	<section>
+		<h3>jQuery Object Caching</h3>
 <pre><code>$("#foo").addClass("active");
 $("#foo").width(200);
 $("#foo").click();
+
+// ...
+
 $("#foo").css('color','blue'); // WTF?!
 $("#foo").text('derp!'); // >.<
 </code></pre>
@@ -231,23 +245,134 @@ $("#foo").text('derp!'); // >.<
 	<section>
 		<p>"Fool me once..."</p>
 		<aside class="notes">
-			<p>As George W. Bush famously did not say: Fool me once, shame on you. Fool me twice, shame on me!</p>
-			<p>As leaders and concerned citizens, it's our responsibility to provide good tools to keep the machine well oiled.</p>
+			<ul>
+				<li>As George W. Bush famously did not say:
+					<ul>
+						<li>Fool me once, shame on you.</li>
+						<li>Fool me twice, shame on me!</li>
+					</ul>
+				</li>
+				<li>As leaders and concerned citizens, it's our responsibility to provide good tools to keep the machine well oiled.</li>
+			</ul>
 		</aside>
 	</section>
 	<section>
 		<h2>Rulez!</h2>
-		<img src="images/jQuery_caching_rule.png">
+		<img src="images/rules/jQuery_caching.png">
 		<p>
 			<small>
 				<a href="https://github.com/Wikia/guidelines/blob/master/JavaScript/CodingConventions.md#caching-jquery-objects">https://github.com/Wikia/guidelines/blob/master/JavaScript/CodingConventions.md#caching-jquery-objects</a>
 			</small>
 		</p>
 	</section>
+	<section>
+		<h3>Max Params</h3>
+<pre><code data-trim>
+// smelly!
+function makeImage(src, width, height, border, type, addedBy) { ... }
+
+makeImages('myImage.gif', '', '', '', '', 'lizlux');
+</code></pre>
+
+<pre class="fragment" data-fragment-index="0"><code data-trim>
+// much better
+function makeImage(options) { ... }
+
+makeImage({
+    src: 'myImage.gif',
+    user: 'lizlux'
+});
+</code></pre>
+		<aside class="notes">
+			<ul>
+				<li>Sign of relief</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<h3>Rulez!</h3>
+		<img src="images/rules/max_params.png">
+		<p>
+			<small>
+				<a href="https://github.com/Wikia/guidelines/blob/master/JavaScript/CodingConventions.md#maximum-parameters">
+					https://github.com/Wikia/guidelines/blob/master/JavaScript/CodingConventions.md#maximum-parameters
+				</a>
+			</small>
+		</p>
+	</section>
+	<section>
+		<h3>Var "Hoisting"</h3>
+<pre><code data-trim contenteditable>
+function foo() {
+    bar();
+    var x = 1;
+}
+
+// same as
+function foo() {
+    var x;
+    bar();
+    x = 1;
+}
+</code></pre>
+		<aside class="notes">
+			<ul>
+				<li>Var hoisting is a complex topic that is difficult to understand, especially if you're accustomed to other languages like Java with different scoping.</li>
+				<li>Let's make it easier on everyone and write the code the way it will be interpreted.</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<h3>Combining <code>var</code> Statements</h3>
+	<pre><code data-trim contenteditable>
+function foo() {
+    var x = 1;
+    var y = 2;
+    var z = 3;
+    bar();
+}
+
+// might as well just write:
+function foo() {
+    var x = 1,
+        y = 2,
+        z = 3;
+    bar();
+}
+</code></pre>
+		<aside class="notes">
+			<ul>
+				<li>So we're putting variables at the top.</li>
+				<li>But why stop there?</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<h3>Rulez!</h3>
+		<img src="images/rules/variables.png">
+		<p>
+			<small>
+				<a href="https://github.com/Wikia/guidelines/blob/master/JavaScript/CodingConventions.md#variables">
+					https://github.com/Wikia/guidelines/blob/master/JavaScript/CodingConventions.md#variables
+				</a>
+			</small>
+		</p>
+		<aside class="notes">
+			<ul>
+				<li>Declare all variables using one var keyword at the top of their scope context. Declaration and assignment on the same line are allowed.</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<h2>Trust the code</h2>
+	</section>
 </section>
 <section>
 	<section>
 		<h2>#2: Don't reinvent the wheel</h2>
+		<aside class="notes">
+			Turns out others have done this before!
+		</aside>
 	</section>
 	<section>
 		<blockquote>
@@ -258,18 +383,25 @@ $("#foo").text('derp!'); // >.<
 		<h3>What we did wrong:</h3>
 		<p class="fragment" data-fragment-index="0">Wrote all the rules</p>
 		<p class="fragment" data-fragment-index="0"><i>Then</i> looked at the tools</p>
-		<aside class="notes">
-			Turns out others have done this before!
-		</aside>
 	</section>
 	<section>
 		<h2>Freakin' Whitespace!</h2>
+		<aside class="notes">
+			<ul>
+				<li>Tons of legacy code means we needed automated tools, but none of the ones out there matched our conventions.</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<h2>White space</h2>
 
 		<p>Went with jQuery because why not?</p>
 		<div>Here's why not:&nbsp;</div>
+<pre><code data-trim contenteditable>
+eatPreztels( type );
+</code></pre>
+<div class="fragment" data-fragment-index="0">
+
 <pre><code data-trim contenteditable>
 eatPretzels( type, function() {
     return 'Yum!';
@@ -281,20 +413,12 @@ eatPretzels( type, function() {
 				src="images/red-arrow-up-right.png"
 				style="width: 148.3917579849872px; height: 148.3917579849872px; border: none; box-shadow: none; background: transparent;">
 		</div>
-		<div class="absolute-element"
-			 style="text-align: left; position: absolute; width: 531.9123630672926px; height: 237px; z-index: 4; left: 331px; top: 419px; max-height: none; max-width: none;">
-			"Function with a callback, object, or array as the last argument: no space after the
+		<div style="text-align: left; float: right; width: 550px;">
+			"Function with a callback, object, or array as the last argument have no space after the
 			last argument" <br>
-
-			<div style="text-align: right;">
-				- jQuery Style Guide
-			</div>
+			<p style="text-align: right">- jQuery Style Guide</p>
 		</div>
-		<aside class="notes">
-			<ul>
-				<li>Tons of legacy code means we needed automated tools, but none of the ones out there matched our conventions.</li>
-			</ul>
-		</aside>
+</div>
 	</section>
 	<section>
 		<h2>MediaWiki</h2>
@@ -358,6 +482,13 @@ eatPretzels( type, function() {
 		</aside>
 	</section>
 	<section>
+		<h3>Style Rules</h3>
+		<p>Style rules help us write easy to read, well documented, and consistent code.</p>
+		<br>
+		<h3>Language Rules</h3>
+		<p>Language rules have an impact on functionality. They were chosen based on performance implications and their tendency to reduce bugs.</p>
+	</section>
+	<section>
 		<h2>JSLint Style Rules</h2>
 		<ul>
 			<li>Whitespace set up to read like english:
@@ -376,35 +507,43 @@ eatPretzels( type, function() {
 		</aside>
 	</section>
 	<section>
-		<p class="upper justified">	backinthedaytheromansdidntusespacesorpunctuationandmisunderstandingsarosesotheyhadtoindroducespacesintotheirwriting
+		<p class="roman">
+			backinthedaytheromansdidntusespacesorpunctuationandmisunderstandingsarosesotheyhadtointroducetheseconventionsintotheirwriting
 		</p>
 		<aside class="notes">
-			Back in the day the romans didn't use spaces or punctuation and misunderstandings arose so they had to indroduce spaces into their writing.
+			Back in the day the romans didn't use spaces or punctuation and misunderstandings arose so they had to introduce these conventions into their writing.
 		</aside>
 	</section>
 	<section>
-		<p class="upper justified">	backintheday theromans    didnt usespa cesorpunctuationa ndmisunder standingsa rosesotheyh adtoind roducespaces intotheirwriting
+		<p class="roman">
+			backintheday theromans    didnt usespa cesor punctu ationa ndmisunder standi ngsa ros esotheyh adtoint roducet heseconve ntions intoth eirwriting
 		</p>
 		<aside class="notes">
-			Not only whitespace, but consistant and sensical whitespace please.
+			Not only whitespace, but consistent and sensical whitespace please.
 		</aside>
+	</section>
+	<section>
+		<p>
+			Back in the day, the romans didn't use spaces or punctuation, and misunderstandings arose, so they had to introduce these conventions into their writing.
+		</p>
 	</section>
 	<section>
 		<h2>Language Rules</h2>
-		<blockquote>If there is a feature of a lanugage that is sometimes problematic, and if it can be replaced with another feature that is more reliable, then always use the more reliable feature.</blockquote>
+		<blockquote>If there is a feature of a language that is sometimes problematic, and if it can be replaced with another feature that is more reliable, then always use the more reliable feature.</blockquote>
 		<p style="text-align: right">~ Douglas Crockford</p>
 	</section>
 	<section>
 		<h2>EQEQ "=="</h2>
 		<pre><code>// Bad
-(foo == 0)
+(foo == 0) // foo can be '', false, 0
 
 // Good
-(foo === 0)</code></pre>
+(foo === 0) // foo is 0</code></pre>
 	</section>
 </section>
 <section>
 	<section>
+		<h3>Popular Coding Convention on Github</h3>
 		<p>
 			<a href="http://sideeffect.kr/popularconvention/#javascript">http://sideeffect.kr/popularconvention/#javascript</a>
 		</p>
@@ -474,8 +613,13 @@ eatPretzels( type, function() {
 			<ul>
 				<li>Single quote vs double quotes</li>
 				<li>56% Single; 43% Double</li>
-				<li>JSLint doesn't specify</li>
-				<li>Any number of reasons including "who the hell cares?"</li>
+				<li>JSLint doesn't specify, but maybe if it did, more people would use one over the other</li>
+				<li>Any number of reasons including:
+					<ul>
+						<li>"who the hell cares?"</li>
+						<li>One less key stroke for lower case</li>
+					</ul>
+				</li>
 			</ul>
 		</aside>
 	</section>
@@ -500,7 +644,7 @@ eatPretzels( type, function() {
 <section>
 	<section>
 		<h2>#3: Programmers are lazy</h2>
-		<p class="fragment" data-fragment-index="0">Good programmers are anyway!</p>
+		<p>Good programmers are anyway!</p>
 		<aside class="notes">
 			<ul>
 				<li>Good, lazy programmers are expensive and need streamlined work environments.</li>
@@ -511,9 +655,11 @@ eatPretzels( type, function() {
 	<section>
 		<p>It should be harder for us to fail than succeed.</p>
 		<ul>
-			<li>Pre-commit hooks</li>
+			<li>Run tools in pre-commit hooks</li>
 			<li>IDE plugins</li>
-			<li>auto-updating whitespace (js-beautify)</li>
+			<li>Auto-updating whitespace for legacy code (js-beautify)</li>
+			<li>Code Climate</li>
+			<li>Plato</li>
 		</ul>
 		<aside class="notes">
 			<ul>
@@ -607,35 +753,171 @@ eatPretzels( type, function() {
 	</aside>
 </section>
 <section>
-	<h2>SCSS Style Guide</h2>
-	<ul>
-		<li>Causes.com's scss-lint</li>
-		<li>analyze-css</li>
-	</ul>
-	<aside class="notes">
+	<section>
+		<h2>Code Climate</h2>
+		<img src="images/code_climate/gpa.png">
+		<img src="images/code_climate/grades.png">
+		<aside class="notes">
+			<ul>
+				<li>Hosted solution</li>
+				<li>Weekly email and notifications when code quality changes</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<h2>Code Climate</h2>
+		<img src="images/code_climate/edit_hubs.png">
+		<aside class="notes">
+			<ul>
+				<li>I can forward this info to the team and create a ticket
+					<ul>
+						<li>Woah, someone's watching me!</li>
+						<li>Woah, someone actually cares!</li>
+					</ul>
+				</li>
+				<li>The benevolent and all-seeing eye of the code quality checker!</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<h2>Plato</h2>
+		<img src="images/plato/graphs.png">
+		<aside class="notes">
+			<ul>
+				<li>Clone a git repo and host it yourself</li>
+			</ul>
+		</aside>
+	</section>
+</section>
+<section>
+	<section>
+		<h2>SCSS Style Guide</h2>
 		<ul>
-			<li>SCSS-Lint:
-				<ul>
-					<li>open source by causes.com</li>
-					<li>Stuff like alphabetizing properties, correct whitespace, too much specificity </li>
-				</ul>
-			</li>
-			<li>Analyze-CSS:
-				<ul>
-					<li>Analyzes compiled css after preprocessors like SCSS and SASS</li>
-					<li>Checks for duplicate rules due to mixins</li>
-					<li>Great for analyzing large code bases</li>
-				</ul>
-			</li>
+			<li>Causes.com's scss-lint</li>
+			<li>analyze-css</li>
 		</ul>
-	</aside>
+		<aside class="notes">
+			<ul>
+				<li>SCSS-Lint:
+					<ul>
+						<li>open source by causes.com</li>
+						<li>Stuff like alphabetizing properties, correct whitespace, too much specificity </li>
+					</ul>
+				</li>
+				<li>Analyze-CSS:
+					<ul>
+						<li>Analyzes compiled css after preprocessors like SCSS and SASS</li>
+						<li>Checks for duplicate rules due to mixins</li>
+						<li>Great for analyzing large code bases</li>
+					</ul>
+				</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<h2>Smelly CSS!</h2>
+	</section>
+	<section>
+		<p>Duplicate Properties</p>
+<pre><code data-trim class="scss">
+/* bad */
+h1 {
+    margin: 10px;
+    text-transform: uppercase;
+    margin: 0; // Second declaration
+}
+
+/* acceptable for handling browser support */
+.box {
+    background: #fff;
+    background: rgba(255, 255, 255, .5);
+}
+</code></pre>
+		<aside class="notes">
+			<ul>
+				<li>It's okay to duplicate properties when dealing with various levels of browser support</li>
+				<li>In this example RGBA may not be supported by all browsers</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<p>Empty Rule</p>
+<pre><code data-trim class="scss">
+/* bad */
+.cat {
+}
+</code></pre>
+		<aside class="notes">
+			<ul>
+				<li>Broken windows affect</li>
+				<li>Code litter</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<p>ID With Extraneous Selector</p>
+<pre><code data-trim class="scss">
+/* bad */
+#submit-button.button {
+    ...
+}
+
+/* good */
+#submit-button {
+    ...
+}
+</code></pre>
+		<aside class="notes">
+			<ul>
+				<li>Unclear on the concept - untrustworthy code</li>
+			</ul>
+		</aside>
+	</section>
+	<section>
+		<p>Over-specificity & Selector Depth</p>
+<pre><code data-trim class="scss">
+/* bad - SCSS doesn't have to match the HTML structure! */
+.wrapper {
+    .wrapper-inner {
+        ul {
+            li {
+                a {
+                    .submit-button {
+                        ...
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* good - only do what's necessary */
+.wrapper {
+    .submit-button {
+        ...
+    }
+}
+</code></pre>
+		<aside class="notes">
+			<ul>
+				<li>SCSS structure does not have to match the DOM structure</li>
+				<li>Determine what level of selector depth you find to be reasonable for your code base
+					<ul>
+						<li>The default is 3</li>
+						<li>We chose 4 to give us breathing room with our legacy <code></code></li>
+					</ul>
+				</li>
+			</ul>
+		</aside>
+	</section>
 </section>
 <section>
 	<section>
 		<h2>Resources</h2>
 		<ul>
-			<li><a href="https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google’s style guide</a></li>
-			<li><a href="https://github.com/airbnb/javascript">AirBnB’s style guide</a></li>
+			<li><a href="https://github.com/Wikia/guidelines/blob/master/JavaScript/CodingConventions.md">Wikia's JS style guide</a></li>
+			<li><a href="https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google’s JS style guide</a></li>
+			<li><a href="https://github.com/airbnb/javascript">AirBnB’s JS style guide</a></li>
 			<li><a href="http://javascript.crockford.com/code.html">Douglas Crockford’s Coding Conventions for the JavaScript Programing Language</a></li>
 			<li><a href="http://jslint.com/">JSLint</a></li>
 			<li><a href="http://jshint.com/">JSHint</a> </li>
@@ -646,11 +928,12 @@ eatPretzels( type, function() {
 		</ul>
 	</section>
 	<section>
-		<h2>Other References</h2>
+		<h3>Other References</h3>
 		<ul>
+			<li><a href="http://www.wikia.com/About">http://www.wikia.com/About</a></li>
+			<li><a href="http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html">http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html</a></li>
 			<li><a href="https://github.com/twbs/bootstrap/issues/3057#issuecomment-5135512">https://github.com/twbs/bootstrap/issues/3057#issuecomment-5135512</a></li>
 			<li><a href="https://www.youtube.com/watch?v=taaEzHI9xyY">https://www.youtube.com/watch?v=taaEzHI9xyY</a></li>
-			<li><a href="http://techcrunch.com/2010/02/07/wikia-says-its-profitable-goes-on-hiring-spree/">http://techcrunch.com/2010/02/07/wikia-says-its-profitable-goes-on-hiring-spree/</a></li>
 			<li><a href="http://anton.kovalyov.net/p/why-jshint/">http://anton.kovalyov.net/p/why-jshint/</a></li>
 		</ul>
 	</section>

@@ -44,11 +44,9 @@
 	margin: 35% 0;
 }
 
-.reveal .upper {
+.reveal .roman {
 	font-size: 148%;
 	text-transform: uppercase;
-}
-.reveal .justified {
-	text-align: justify;
+	text-align: left;
 	word-wrap: break-word;
 }
