@@ -61,7 +61,7 @@
 	<div style="text-align: center;">
 		<span>Front End Coding Conventions Team</span>
 	</div>
-	<aside>
+	<aside class="notes">
 		<ul>
 			<li>@lizlux Github which is where these slides are available to clone</li>
 		</ul>
@@ -129,6 +129,7 @@
 		</aside>
 	</section>
 	<section>
+		<p>"Code base anarchy"</p>
 		<img src="images/AnarchyOnlineWikiaLogo1.png">
 		<div>
 			<a href="http://anarchyonline.wikia.com/">http://anarchyonline.wikia.com/</a>
@@ -200,7 +201,7 @@ $("#foo").addClass("active")
 	<section>
 		<h2>Code Smells</h2>
 		<p>"Any symptom in the source code of a program that possibly indicates a deeper problem" <br>-Wikipedia</p>
-		<aside>
+		<aside class="notes">
 			<ul>
 				<li>GIGO - Garbage in, garbage out</li>
 			</ul>
@@ -323,6 +324,19 @@ function foo() {
 		</aside>
 	</section>
 	<section>
+		<p>Example:</p>
+		<pre><code data-trim>
+var foo = 1;
+function bar() {
+    if (!foo) {
+        var foo = 10;
+    }
+    alert(foo); // 10
+}
+bar();
+		</code></pre>
+	</section>
+	<section>
 		<h3>Combining <code>var</code> Statements</h3>
 	<pre><code data-trim contenteditable>
 function foo() {
@@ -411,7 +425,7 @@ eatPretzels( type, function() {
 			 style="position: absolute; width: 189px; height: 186px; z-index: 4; left: 43px; top: 331px;">
 			<img
 				src="images/red-arrow-up-right.png"
-				style="width: 148.3917579849872px; height: 148.3917579849872px; border: none; box-shadow: none; background: transparent;">
+				style="width: 148px; height: 148px; border: none; box-shadow: none; background: transparent;">
 		</div>
 		<div style="text-align: left; float: right; width: 550px;">
 			"Function with a callback, object, or array as the last argument have no space after the
@@ -792,27 +806,19 @@ eatPretzels( type, function() {
 <section>
 	<section>
 		<h2>SCSS Style Guide</h2>
+	</section>
+	<section>
+		<h3>SCSS-Lint</h3>
 		<ul>
-			<li>Causes.com's scss-lint</li>
-			<li>analyze-css</li>
+			<li>Open source by Causes.com</li>
+			<li>Checks stuff like:
+				<ul>
+					<li>Alphabetizing properties</li>
+					<li>Whitespace</li>
+					<li>Selector depth</li>
+				</ul>
+			</li>
 		</ul>
-		<aside class="notes">
-			<ul>
-				<li>SCSS-Lint:
-					<ul>
-						<li>open source by causes.com</li>
-						<li>Stuff like alphabetizing properties, correct whitespace, too much specificity </li>
-					</ul>
-				</li>
-				<li>Analyze-CSS:
-					<ul>
-						<li>Analyzes compiled css after preprocessors like SCSS and SASS</li>
-						<li>Checks for duplicate rules due to mixins</li>
-						<li>Great for analyzing large code bases</li>
-					</ul>
-				</li>
-			</ul>
-		</aside>
 	</section>
 	<section>
 		<h2>Smelly CSS!</h2>
@@ -890,7 +896,12 @@ h1 {
         }
     }
 }
-
+.wrapper .wrapper-inner ul li a .submit-button { ... }
+</code></pre>
+	</section>
+	<section>
+		<p>Sane Selector Depth</p>
+		<pre><code data-trim>
 /* good - only do what's necessary */
 .wrapper {
     .submit-button {
@@ -909,6 +920,15 @@ h1 {
 				</li>
 			</ul>
 		</aside>
+	</section>
+	<section>
+		<h3>Analyze-CSS</h3>
+		<ul>
+			<li>Created by Macbre</li>
+			<li>Analyzes compiled css after preprocessors like SCSS and SASS</li>
+			<li>Checks for duplicate rules due to mixins</li>
+			<li>Great for analyzing large code bases</li>
+		</ul>
 	</section>
 </section>
 <section>
