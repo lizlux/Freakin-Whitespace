@@ -124,19 +124,6 @@
 				<li>"Highly customized version of MediaWiki" (2002)</li>
 				<li>Full stack engineers and generalists</li>
 				<li>Not exactly "rapid" growth, but "steady" growth</li>
-				<li>Interesting fact: I google image searched "code base anarchy" and this image shows up in the first page of results:</li>
-			</ul>
-		</aside>
-	</section>
-	<section>
-		<p>"Code base anarchy"</p>
-		<img src="images/AnarchyOnlineWikiaLogo1.png">
-		<div>
-			<a href="http://anarchyonline.wikia.com/">http://anarchyonline.wikia.com/</a>
-		</div>
-		<aside class="notes">
-			<ul>
-				<li>Long philosophical discussions without a place to point to.</li>
 			</ul>
 		</aside>
 	</section>
@@ -146,6 +133,7 @@
 		<img src="images/nerdfight.png">
 		<aside class="notes">
 			<ul>
+				<li>Long philosophical discussions without a place to point to.</li>
 				<li>No one place to point to to say: "This is how we do things here"</li>
 			</ul>
 		</aside>
@@ -224,8 +212,6 @@ $("#foo").addClass("active")
 		<p class="fragment" data-fragment-index="0">Smelly code begets smelly code</p>
 		<aside class="notes">
 			<ul>
-				<li>jQuery conf 2013; (Sam Breed, CTO of Quick Left; "Fixing Broken Windows: 10 Small Things That Will Instantly Improve Your Project")</li>
-				<li>Explain what broken windows effect is</li>
 				<li>Coding environment</li>
 				<li>Make your code trustworthy so you can trust your code!</li>
 			</ul>
@@ -284,11 +270,6 @@ makeImage({
     user: 'lizlux'
 });
 </code></pre>
-		<aside class="notes">
-			<ul>
-				<li>Sign of relief</li>
-			</ul>
-		</aside>
 	</section>
 	<section>
 		<h3>Rulez!</h3>
@@ -300,6 +281,11 @@ makeImage({
 				</a>
 			</small>
 		</p>
+		<aside class="notes">
+			<ul>
+				<li>Functions should have no more than 4 parameters. If more than 4 are needed, create and object that contains the parameters and pass that object to the function.</li>
+			</ul>
+		</aside>
 	</section>
 	<section>
 		<h3>Var "Hoisting"</h3>
@@ -318,8 +304,7 @@ function foo() {
 </code></pre>
 		<aside class="notes">
 			<ul>
-				<li>Var hoisting is a complex topic that is difficult to understand, especially if you're accustomed to other languages like Java with different scoping.</li>
-				<li>Let's make it easier on everyone and write the code the way it will be interpreted.</li>
+				<li>Var hoisting is a complex topic even experience developers have trouble with sometimes</li>
 			</ul>
 		</aside>
 	</section>
@@ -335,29 +320,20 @@ function bar() {
 }
 bar();
 		</code></pre>
-	</section>
-	<section>
-		<h3>Combining <code>var</code> Statements</h3>
-	<pre><code data-trim contenteditable>
-function foo() {
-    var x = 1;
-    var y = 2;
-    var z = 3;
-    bar();
+		<pre class="fragment" data-fragment-index="0"><code data-trim>
+var foo = 1;
+function bar() {
+    var foo; // foo is undefined
+    if (!foo) {
+        foo = 10;
+    }
+    alert(foo); // 10
 }
-
-// might as well just write:
-function foo() {
-    var x = 1,
-        y = 2,
-        z = 3;
-    bar();
-}
-</code></pre>
+bar();
+		</code></pre>
 		<aside class="notes">
 			<ul>
-				<li>So we're putting variables at the top.</li>
-				<li>But why stop there?</li>
+				<li>Let's make it easier on everyone and write the code the way it will be interpreted.</li>
 			</ul>
 		</aside>
 	</section>
@@ -545,6 +521,12 @@ eatPretzels( type, function() {
 		<h2>Language Rules</h2>
 		<blockquote>If there is a feature of a language that is sometimes problematic, and if it can be replaced with another feature that is more reliable, then always use the more reliable feature.</blockquote>
 		<p style="text-align: right">~ Douglas Crockford</p>
+		<aside class="notes">
+			<ul>
+				<li>A good example of this is the var hoisting we discussed earlier</li>
+			</ul>
+		</aside>
+
 	</section>
 	<section>
 		<h2>EQEQ "=="</h2>
@@ -628,12 +610,6 @@ eatPretzels( type, function() {
 				<li>Single quote vs double quotes</li>
 				<li>56% Single; 43% Double</li>
 				<li>JSLint doesn't specify, but maybe if it did, more people would use one over the other</li>
-				<li>Any number of reasons including:
-					<ul>
-						<li>"who the hell cares?"</li>
-						<li>One less key stroke for lower case</li>
-					</ul>
-				</li>
 			</ul>
 		</aside>
 	</section>
@@ -667,6 +643,14 @@ eatPretzels( type, function() {
 		</aside>
 	</section>
 	<section>
+		<h2>Tools</h2>
+		<ul>
+			<li>JSHint</li>
+			<li>JS-Beautify</li>
+			<li>JSCS</li>
+		</ul>
+	</section>
+	<section>
 		<p>It should be harder for us to fail than succeed.</p>
 		<ul>
 			<li>Run tools in pre-commit hooks</li>
@@ -680,14 +664,6 @@ eatPretzels( type, function() {
 				<li>Part of building a style guide is providing the tools to enforce it. </li>
 			</ul>
 		</aside>
-	</section>
-	<section>
-		<h2>Tools</h2>
-		<ul>
-			<li>JSHint</li>
-			<li>JS-Beautify</li>
-			<li>JSCS</li>
-		</ul>
 	</section>
 </section>
 <section>
@@ -914,8 +890,7 @@ h1 {
 				<li>SCSS structure does not have to match the DOM structure</li>
 				<li>Determine what level of selector depth you find to be reasonable for your code base
 					<ul>
-						<li>The default is 3</li>
-						<li>We chose 4 to give us breathing room with our legacy <code></code></li>
+						<li>The default is 3, we went with 4</li>
 					</ul>
 				</li>
 			</ul>
